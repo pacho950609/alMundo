@@ -75,7 +75,6 @@ module.exports =
     {
         let hoteles = db.collection('hoteles');
         let estrellas = req.params.estrellas.split('y').map(Number);
-        console.log(req.params.estrellas);
 
         hoteles.find({'stars':{ $in: estrellas }}).toArray(
             (err,respuesta) =>
