@@ -1,0 +1,75 @@
+
+.card{
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.08), 0 1px 1px rgba(0, 0, 0, 0.14);
+    border-radius: 0px;
+}
+
+.searchForm{
+    padding-bottom: 10px;
+    font-size: 13px;
+}
+
+.filterType{
+    color: #0679B3;
+    line-height: 20px;
+    font-size: 15px;
+    cursor: pointer;
+    min-height: 50px;
+    display: flex;
+    align-content: center;
+    align-items: center;
+}
+
+.filterImg{
+    height: 18px;
+    width: 18px;
+}
+
+.collapseFilter{
+    float: right;
+    right: 0;
+}
+
+.filterType .filterCollapseSearch::before{
+    font-family: "Font Awesome 5 Free";
+    float: right;
+    font-weight: 900;
+    content:"\f0d8";
+}
+
+.filterType.collapsed .filterCollapseSearch::before{
+    content:"\f0d7";
+}
+
+.container-fluid{
+    margin: 0;
+    padding: 0;
+}
+
+.filterSearchInput{
+    min-width: 100%;
+    font-size: 12px;
+}
+
+.filterSearchBtn{
+    font-weight: bold;
+    color: white;
+    background-color: #093E80;
+    border: none;
+    border-radius: 2px;
+    font-size: 12px;
+    min-width: 100%;
+}
+
+.filterStarLabel{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    align-content: center;
+}
+
+.filterStarImg{
+    display: inline-block;
+    width: 13px;
+    height: 13px;
+}

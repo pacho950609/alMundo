@@ -1,0 +1,6 @@
+{
+    "puerto":8080,
+    "dbUrl":"ds153851.mlab.com:53851/almundo",
+    "usuarioDB":"almundo",
+    "contraseniaDB":"almundo123"
+}

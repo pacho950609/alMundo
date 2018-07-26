@@ -1,0 +1,110 @@
+.card{
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.08), 0 1px 1px rgba(0, 0, 0, 0.14);
+    border-radius: 0px;
+    margin-bottom: 15px;
+}
+
+.card-body{
+    padding: 8px;
+}
+
+.hotelsContainerImg{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+}
+
+.hotelsImg{
+    max-width: 100%;
+    max-height: 100vh;
+    align-self: center;
+}
+
+.hotelsName{
+    color: #0679B3;
+}
+
+.hotelsStarImg{
+    width: 14px;
+    height: 14px;
+}
+
+.hotelsAmenityImg{
+    width: 19px;
+    height: 19px;
+}
+
+.hotelsContainerPrice{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    min-height: 100%;
+    text-align: center;
+    border-left: 2px dashed #CCCCCC;
+}
+
+.hotelsLblPrice{
+    font-size: 11px;
+    text-align: center;
+    color: #444444;
+    font-weight: 600;
+    margin: 0;
+}
+
+.hotelsLblCurr{
+    color: #E16800;
+    font-size: 17px;
+    margin: 0;
+}
+
+.hotelsPrice{
+    color: #E16800;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.hotelsPriceBtn{
+    font-weight: bold;
+    color: white;
+    min-width: 100%;
+    background-color: #093E80;
+    border: none;
+    border-radius: 2px;
+    font-size: 12px;
+}
+
+@media only screen and (max-width: 576px) {
+    .hotelsContainerPrice{
+        border-left: none;
+        border-top: 2px dashed #CCCCCC;
+        margin-top: 15px;
+        margin-bottom: 25px;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .hotelsLblCurr{
+        font-size: 12px;
+    }
+
+    .hotelsPrice{
+        font-size: 16px;
+    }
+
+    .card{
+        margin-top: 12px;
+        margin-bottom: 12px;
+    }
+}
+
+@media only screen and (max-width: 992px) {
+    .hotelsLblCurr{
+        font-size: 13px;
+    }
+
+    .hotelsPrice{
+        font-size: 16px;
+    }
+}

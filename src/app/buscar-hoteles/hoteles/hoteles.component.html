@@ -1,0 +1,36 @@
+<div class="container-fluid">
+    <div class="card" *ngFor="let hotel of hoteles">
+        <div class="card-body row no-gutters">
+            <div class="col-lg-4 col-md-4 col-sm-4 hotelsContainerImg">
+                <img class="hotelsImg" src="/api/imagen/{{hotel.image}}" alt="">
+            </div>
+            <div class="col-lg-5 col-md-5 col-sm-5">
+                <div class="container-fluid">
+                    <div class="hotelsName"><strong>{{hotel.name}}</strong></div>
+                    <span>
+                        <img *ngIf="hotel.stars>0" class="hotelsStarImg" src="../assets/icons/filters/starY.svg">
+                        <img *ngIf="hotel.stars>1" class="hotelsStarImg" src="../assets/icons/filters/starY.svg">
+                        <img *ngIf="hotel.stars>2" class="hotelsStarImg" src="../assets/icons/filters/starY.svg">
+                        <img *ngIf="hotel.stars>3" class="hotelsStarImg" src="../assets/icons/filters/starY.svg">
+                        <img *ngIf="hotel.stars>4" class="hotelsStarImg" src="../assets/icons/filters/starY.svg">
+                    </span>
+                    <div>
+                        <span *ngFor="let amenity of hotel.amenities">
+                            <img class="hotelsAmenityImg" src="../assets/icons/amenities/{{amenity}}.svg">
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-3">
+                <div class="container-fluid hotelsContainerPrice">
+                    <div class="hotelsLblPrice">Precio por noche por habitación</div>
+                    <span>
+                        <label class="hotelsLblCurr">ARS</label>
+                        <label class="hotelsPrice">{{hotel.price}}</label>
+                    </span>
+                    <button class="btn hotelsPriceBtn" name="button">Ver hotel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
