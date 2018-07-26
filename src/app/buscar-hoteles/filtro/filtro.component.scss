@@ -9,8 +9,33 @@
     font-size: 13px;
 }
 
+
+@media only screen and (max-width: 600px) 
+{
+    .wholeFilter
+    {
+        padding-left: 0px;
+    }
+}
+
+@media only screen and (min-width: 600px) 
+{
+    .wholeFilter
+{
+    padding-left: 0px;
+}
+}
+
+@media only screen and (min-width: 800px) 
+{
+    .wholeFilter
+    {
+        padding-left: 28px;
+    }
+}
+
 .filterType{
-    color: #0679B3;
+    color: #3498DB;
     line-height: 20px;
     font-size: 15px;
     cursor: pointer;

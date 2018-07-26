@@ -22,11 +22,11 @@ export class FiltroComponent implements OnInit {
       });
   }
 
-  public filtrarPorNombre(value)
+  public filtrarPorNombre(nombre : string)
   {
-    if(value)
+    if(nombre)
     {
-      this.service.hotelesPorNombre(value).subscribe(ress => 
+      this.service.hotelesPorNombre(nombre).subscribe(ress => 
         {
           this.hoteles=ress;
         });
@@ -43,25 +43,28 @@ export class FiltroComponent implements OnInit {
 
   public filtrarPorEstrellas()
   {
-    const filter = this.estrellas[0] || this.estrellas[1] || this.estrellas[2] || this.estrellas[3] || this.estrellas[4];
+    const filtrar = this.estrellas[0] || this.estrellas[1] || this.estrellas[2] || this.estrellas[3] || this.estrellas[4];
      
-    if(filter)
+    if(filtrar)
     {
-      let starsStr = '';
+      let textoEstrellas = '';
       let i = 1;
-      for (const star of this.estrellas) {
-          if (star) {
-              if ( starsStr === '' ) {
-                  starsStr += i;
+      for (let estrella of this.estrellas) {
+          if (estrella) 
+          {
+              if ( !textoEstrellas ) 
+              {
+                textoEstrellas += i;
               }
-              else {
-                  starsStr = i  + 'y' + starsStr;
+              else 
+              {
+                textoEstrellas = i  + 'y' + textoEstrellas;
               }
           }
           i++;
       }
-      console.log(starsStr);
-      this.service.hotelesPorEstrella(starsStr).subscribe(ress => 
+
+      this.service.hotelesPorEstrella(textoEstrellas).subscribe(ress => 
         {
           this.hoteles=ress;
           
