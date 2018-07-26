@@ -1,6 +1,5 @@
 const mongo = require( './../db/conexion' );
 const db = mongo.darDb();
-const ObjectId = require('mongodb').ObjectID;
 const dir = require('path')
 
 module.exports = 
@@ -8,10 +7,20 @@ module.exports =
     //crea un hotel
     crear: function(req, res, next)
     {
-            rutas.insert(element, (err,result)=>
-            {   
-               
-            });
+        let hoteles = db.collection('hoteles');
+        let hotel =
+        {
+            'id':req.body.id,
+             'name':   req.body.name,
+            'stars': req.body.stars,
+            'price': req.body.price,
+            'image': req.body.image,
+            'amenities': req.body.amenities,
+        };
+        hoteles.insert(hotel, (err,result)=>
+        {   
+            res.json(result);
+        });
        
     },
 
@@ -20,47 +29,29 @@ module.exports =
     {
 
        
-        let rutas = db.collection('rutas');
+        let hoteles = db.collection('hoteles');
 
-        rutas.update({'placas': req.body.placas},
-            {$set:  { 'tipoVehiculo':   req.body.tipoVehiculo,
-                      'SOAT': req.body.SOAT 
+        hoteles.update({'id': req.body.id},
+            {$set:  { 'name':   req.body.name,
+                      'stars': req.body.stars,
+                      'price': req.body.price,
+                      'image': req.body.image,
+                      'amenities': req.body.amenities,
                     }},
             (err,result) =>
             {
-                if(err)
-                {
-                    res.json("No se pudo actualizar el conductor");
-                }
-                else
-                {
                    res.json(result);
-                }
-                
             });
          
     },
 
     //elimina un hotel
     eliminar: function(req, res, next)
-    {
-   
-       
-        let rutas = db.collection('rutas');
-        let asignaciones = db.collection('asignaciones');
+    {  
+        let hoteles = db.collection('hoteles');
 
-        rutas.remove({'_id' : ObjectId(req.params.id)})
-        .then( result =>
-        {
-            return asignaciones.remove({'rutaID': req.params.id});
-        })
-        .then (result => 
-        {      
-            res.json(result);
-        })
-        .catch( err =>
-        {
-            res.json("No se pudo eliminar");
+        hoteles.remove({'id' : req.params.id}, (err,result) =>{
+                res.json(result);
         });
        
     }, 
